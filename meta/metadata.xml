@@ -1,6 +1,7 @@
-<dc:title>My Ebook Title</dc:title>
-<dc:language>en-GB</dc:language>
-<dc:creator opf:file-as="Furley, Paul" opf:role="aut">Paul Furley</dc:creator>
+<dc:title id="t1">My Ebook Title</dc:title>
+<meta refines="#t1" property="title-type">main</meta>
+<dc:language>en-US</dc:language>
+<dc:creator opf:file-as="Calvert, Charlie" opf:role="aut">Charlie Calvert</dc:creator>
 <dc:publisher>paulfurley.com</dc:publisher>
-<dc:date opf:event="publication">2014-08-01</dc:date>
-<dc:rights>Copyright © 2014 Paul M Furley</dc:rights>
+<dc:date opf:event="publication">2017-05-06</dc:date>
+<dc:rights>Copyright © 2017 Charlie Calvert</dc:rights>

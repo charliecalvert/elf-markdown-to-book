@@ -1,4 +1,6 @@
-# Heading 1
+# Chapter Three
+
+This is chapter two of my book.
 
 ## Heading 2
 
