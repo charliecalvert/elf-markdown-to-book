@@ -2,7 +2,9 @@ CHAPTERS = $(sort $(wildcard chapters/*.md))
 
 # echo $(CHAPTERS)
 
-EPUB_FILE = build/book.epub
+BOOKNAME=MobileApplications
+
+EPUB_FILE = build/$(BOOKNAME).epub
 MOBI_FILE = build/book.mobi
 PDF_FILE = build/book.pdf
 
@@ -29,11 +31,11 @@ preview: $(MOBI_FILE)
 	ebook-viewer $(MOBI_FILE)
 
 
-$(EPUB_FILE): clean $(CHAPTERS) meta/title.txt meta/cover.jpg meta/stylesheet.css meta/metadata.xml
+$(EPUB_FILE): clean $(CHAPTERS) meta/title.txt meta/cover.png meta/stylesheet.css meta/metadata.xml
 	pandoc \
 		-o $(EPUB_FILE) \
 		$(CHAPTERS) \
-		--epub-cover-image=meta/cover.jpg \
+		--epub-cover-image=meta/cover.png \
 		--epub-stylesheet=meta/stylesheet.css \
 		--epub-metadata=meta/metadata.xml \
 		--table-of-contents

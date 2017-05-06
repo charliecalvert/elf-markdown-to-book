@@ -2,3 +2,5 @@ build/*.epub
 build/*.mobi
 build/*.pdf
 .*.swp
+fonts
+chapters
