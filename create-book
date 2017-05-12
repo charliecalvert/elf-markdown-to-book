@@ -1,4 +1,7 @@
 #! /bin/bash
 
-./copy-chapters
+./copy-isit322
 make epub
+
+#./copy-prog272
+#make epub_prog272

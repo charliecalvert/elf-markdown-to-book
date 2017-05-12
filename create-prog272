@@ -1,0 +1,4 @@
+#! /bin/bash
+
+./copy-prog272
+make epub_prog272

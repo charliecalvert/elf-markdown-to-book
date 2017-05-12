@@ -1,0 +1,47 @@
+#! /bin/bash
+
+CHAPTER_DIR=chapters
+ROOT_DIR=$HOME/Git/CloudNotes/Assignments
+
+REACT_DIR=$ROOT_DIR/React
+JSON_DIR=$ROOT_DIR/Json
+MIDTERM_DIR=$ROOT_DIR/MidtermFinal
+GIT_DIR=$ROOT_DIR/Git
+BROWSER=$ROOT_DIR/Browser
+
+function copyChapter() {
+    cp -v $ROOT_DIR/$1 $CHAPTER_DIR/$2
+}
+
+function linkChapter() {
+    ln -s $3/$1 $CHAPTER_DIR/$2
+}
+
+function linkJsonChapter() {
+    ln -s $JSON_DIR/$1 $CHAPTER_DIR/$2
+}
+
+
+if ls $CHAPTER_DIR/chapter_*.md 1> /dev/null 2>&1; then
+    echo 'removing old chapter files'
+    rm $CHAPTER_DIR/chapter_*.md
+fi
+
+linkChapter JavaScriptObjects.md chapter_01.md $ROOT_DIR
+linkChapter JestCreateReactApp.md chapter_02.md $REACT_DIR
+linkChapter UnitTestsAddress.md chapter_03.md $REACT_DIR
+linkChapter AddressComponent.md chapter_04.md $REACT_DIR
+linkChapter AddressComponentRefine.md chapter_05.md $REACT_DIR
+linkChapter ReactAddressShow.md chapter_06.md $REACT_DIR
+linkChapter ReactAddressEdit.md chapter_07.md $REACT_DIR
+linkChapter ReactAddressMenu.md chapter_08.md $REACT_DIR
+linkChapter ReactGetAddress.md chapter_09.md $REACT_DIR
+linkChapter Prog272Midterm2017.md chapter_10.md $MIDTERM_DIR
+linkChapter LearnLocalStorage.md chapter_11.md $BROWSER
+
+#linkChapter .md chapter_11.md $REACT_DIR
+#linkChapter .md chapter_12.md $GIT_DIR
+#linkChapter .md chapter_13.md $MIDTERM_DIR
+# linkChapter  chapter_0.md
+
+
