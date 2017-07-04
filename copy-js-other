@@ -1,0 +1,80 @@
+#! /bin/bash
+
+CHAPTER_DIR=chapters
+SRC_DIR="$HOME"/Git/writings/Elvenware/development/web/JavaScript
+
+function linkChapter() {
+    ln -s "$3"/"$1" "$CHAPTER_DIR"/"$2"
+}
+
+if ls "$CHAPTER_DIR"/chapter_*.md 1> /dev/null 2>&1; then
+    echo 'removing old chapter files'
+    rm "$CHAPTER_DIR"/chapter_*.md
+fi
+
+# This got me close to automating names:
+# find ~/Git/writings/Elvenware/development/git/git-* -printf 'linkChapter %f chapter_01.md "$SRC_DIR"\n'
+find ~/Git/writings/Elvenware/development/web/JavaScript/JavaScript* -printf 'linkChapter %f chapter_01.md "$SRC_DIR"\n'
+
+
+linkChapter GettingStarted.md chapter_01.md "$SRC_DIR"
+linkChapter WritingSimpleCode.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptBasics.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptObjects.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptFunctions.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptModules.md chapter_01.md "$SRC_DIR"
+linkChapter DataStructures.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptPatterns.md chapter_01.md "$SRC_DIR"
+linkChapter JsonBasics.md chapter_01.md "$SRC_DIR"
+linkChapter JQueryBasic.md chapter_01.md "$SRC_DIR"
+linkChapter JQueryUi.md chapter_01.md "$SRC_DIR"
+linkChapter NodeJs.md chapter_01.md "$SRC_DIR"
+linkChapter NodePackages.md chapter_01.md "$SRC_DIR"
+linkChapter NodeJade.md chapter_01.md "$SRC_DIR"
+linkChapter ElvenUtilities.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptReact.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptReactMenu.md chapter_01.md "$SRC_DIR"
+linkChapter Angular.md chapter_01.md "$SRC_DIR"
+linkChapter Require.md chapter_01.md "$SRC_DIR"
+linkChapter HandleBars.md chapter_01.md "$SRC_DIR"
+linkChapter Sockets.md chapter_01.md "$SRC_DIR"
+linkChapter Functional.md chapter_01.md "$SRC_DIR"
+
+
+linkChapter AddingMachine.md chapter_01.md "$SRC_DIR"
+linkChapter AngularLinks.md chapter_01.md "$SRC_DIR"
+linkChapter BasicSyntax.md chapter_01.md "$SRC_DIR"
+linkChapter BindMe.md chapter_01.md "$SRC_DIR"
+linkChapter DataStructures.md chapter_01.md "$SRC_DIR"
+linkChapter DojoTest.md chapter_01.md "$SRC_DIR"
+linkChapter ExternalMobilePage.md chapter_01.md "$SRC_DIR"
+linkChapter foo.md chapter_01.md "$SRC_DIR"
+linkChapter GettingStarted.md chapter_01.md "$SRC_DIR"
+linkChapter GoogleDriveSdk.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptAutorun.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptInTheHead.md chapter_01.md "$SRC_DIR"
+linkChapter JavaScriptWebFrameworks.md chapter_01.md "$SRC_DIR"
+linkChapter JQueryBackgroundMorph.md chapter_01.md "$SRC_DIR"
+linkChapter JQueryUiDemo.md chapter_01.md "$SRC_DIR"
+linkChapter JsObjects.md chapter_01.md "$SRC_DIR"
+linkChapter master-list.md chapter_01.md "$SRC_DIR"
+linkChapter MediaQueryMock.md chapter_01.md "$SRC_DIR"
+linkChapter NavigatorInfo.md chapter_01.md "$SRC_DIR"
+linkChapter NodeInstall.md chapter_01.md "$SRC_DIR"
+linkChapter OnClickHandler.md chapter_01.md "$SRC_DIR"
+linkChapter OpinionatedSuccess.md chapter_01.md "$SRC_DIR"
+linkChapter Particles.md chapter_01.md "$SRC_DIR"
+linkChapter RoutingLinks.md chapter_01.md "$SRC_DIR"
+linkChapter ScreenData.md chapter_01.md "$SRC_DIR"
+linkChapter SendMeToElvenware.md chapter_01.md "$SRC_DIR"
+linkChapter ShowMimeTypes.md chapter_01.md "$SRC_DIR"
+linkChapter ShowPlugIns.md chapter_01.md "$SRC_DIR"
+linkChapter SignIn.md chapter_01.md "$SRC_DIR"
+linkChapter SlideMobileMenu.md chapter_01.md "$SRC_DIR"
+linkChapter StaticAndInstanceData.md chapter_01.md "$SRC_DIR"
+linkChapter Summary.md chapter_01.md "$SRC_DIR"
+linkChapter SystemInformation.md chapter_01.md "$SRC_DIR"
+linkChapter TwitterQuery.md chapter_01.md "$SRC_DIR"
+linkChapter VerySimple.md chapter_01.md "$SRC_DIR"
+linkChapter WritingSimpleCode.md chapter_01.md "$SRC_DIR"
+linkChapter Yeoman.md chapter_01.md "$SRC_DIR

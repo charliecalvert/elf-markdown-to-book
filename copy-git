@@ -1,0 +1,30 @@
+#! /bin/bash
+
+CHAPTER_DIR=chapters
+SRC_DIR="$HOME"/Git/writings/Elvenware/development/git
+
+function linkChapter() {
+    ln -s "$3"/"$1" "$CHAPTER_DIR"/"$2"
+}
+
+if ls "$CHAPTER_DIR"/chapter_*.md 1> /dev/null 2>&1; then
+    echo 'removing old chapter files'
+    rm "$CHAPTER_DIR"/chapter_*.md
+fi
+
+# This got me close to automating names:
+# find ~/Git/writings/Elvenware/development/git/git-* -printf 'linkChapter %f chapter_01.md "$SRC_DIR"\n'
+
+linkChapter git-introduction.md chapter_01.md "$SRC_DIR"
+linkChapter git-install.md chapter_02.md "$SRC_DIR"
+linkChapter git-configure.md chapter_03.md "$SRC_DIR"
+linkChapter git-ignore.md chapter_04.md "$SRC_DIR"
+linkChapter git-basics.md chapter_05.md "$SRC_DIR"
+linkChapter git-delete-move.md chapter_06.md "$SRC_DIR"
+linkChapter git-search-explore.md chapter_07.md "$SRC_DIR"
+linkChapter git-tag.md chapter_08.md "$SRC_DIR"
+linkChapter git-branches.md chapter_09.md "$SRC_DIR"
+linkChapter git-merge.md chapter_10.md "$SRC_DIR"
+linkChapter git-fork.md chapter_11.md "$SRC_DIR"
+linkChapter git-rebase.md chapter_12.md "$SRC_DIR"
+linkChapter git-gui.md chapter_13.md "$SRC_DIR"

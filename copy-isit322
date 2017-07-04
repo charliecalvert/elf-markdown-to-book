@@ -8,18 +8,18 @@ REACT_DIR="$ROOT_DIR"/React
 JSON_DIR="$ROOT_DIR"/Json
 MIDTERM_DIR="$ROOT_DIR"/MidtermFinal
 GIT_DIR="$ROOT_DIR"/Git
-ISIT322_DIR="$CLOUD_DIR"/Isit322
+# ISIT322_DIR="$CLOUD_DIR"/Isit322
 
 function copyChapter() {
     cp -v "$ROOT_DIR"/"$1" "$CHAPTER_DIR"/"$2"
 }
 
 function linkChapter() {
-    ln -s $3/$1 "$CHAPTER_DIR"/"$2"
+    ln -s "$3"/"$1" "$CHAPTER_DIR"/"$2"
 }
 
 function linkJsonChapter() {
-    ln -s $JSON_DIR/$1 "$CHAPTER_DIR"/"$2"
+    ln -s "$JSON_DIR"/"$1" "$CHAPTER_DIR"/"$2"
 }
 
 

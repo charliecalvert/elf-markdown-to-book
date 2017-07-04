@@ -2,11 +2,18 @@ CHAPTERS = $(sort $(wildcard chapters/*.md))
 
 # echo $(CHAPTERS)
 
+# If you get: ! LaTeX Error: Command \textquotesingle unavailable in encoding T1.
+# Then try: sudo apt-get install texlive-latex-extra
+
 BOOKNAME=MobileApplications
 BOOK_PROG272_NAME=ElvenMobileDevelopment
+BOOK_GIT_NAME=ElvenGit
+BOOK_JS_NAME=ElvenJavaScript
 
 EPUB_FILE = build/$(BOOKNAME).epub
 EPUB_PROG272_FILE = build/$(BOOK_PROG272_NAME).epub
+EPUB_GIT_FILE = build/$(BOOK_GIT_NAME).epub
+EPUB_JS_FILE = build/$(BOOK_JS_NAME).epub
 MOBI_FILE = build/book.mobi
 PDF_FILE = build/book.pdf
 
@@ -23,6 +30,12 @@ epub: $(EPUB_FILE)
 
 .PHONY: epub_prog272
 epub_prog272: $(EPUB_PROG272_FILE)
+
+.PHONY: epub_git
+epub_git: $(EPUB_GIT_FILE)
+
+.PHONY: epub_js
+epub_js: $(EPUB_JS_FILE)
 
 .PHONY: mobi
 mobi: $(MOBI_FILE)
@@ -52,6 +65,25 @@ $(EPUB_PROG272_FILE): clean $(CHAPTERS) meta/title-prog272.txt meta/cover-prog27
 		--epub-cover-image=meta/cover-prog272.png \
 		--epub-stylesheet=meta/stylesheet.css \
 		--epub-metadata=meta/metadata-prog272.xml \
+		--table-of-contents
+
+# $(EPUB_GIT_FILE): clean $(CHAPTERS) meta/title-git-book.txt meta/cover-git-book.png meta/stylesheet.css meta/metadata-git-book.xml
+$(EPUB_GIT_FILE): clean $(CHAPTERS)
+	pandoc \
+		-o $(EPUB_GIT_FILE) \
+		$(CHAPTERS) \
+		--epub-cover-image=meta/cover-git-book.png \
+		--epub-stylesheet=meta/stylesheet.css \
+		--epub-metadata=meta/metadata-git-book.xml \
+		--table-of-contents
+
+$(EPUB_JS_FILE): clean $(CHAPTERS)
+	pandoc \
+		-o $(EPUB_JS_FILE) \
+		$(CHAPTERS) \
+		--epub-cover-image=meta/cover-js-book.png \
+		--epub-stylesheet=meta/stylesheet.css \
+		--epub-metadata=meta/metadata-js-book.xml \
 		--table-of-contents
 
 $(PDF_FILE): $(CHAPTERS) meta/title.txt

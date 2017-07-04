@@ -1,0 +1,7 @@
+<dc:title id="t1">Elven JavaScript Development v1.0.0</dc:title>
+<meta refines="#t1" property="title-type">main</meta>
+<dc:language>en-US</dc:language>
+<dc:creator opf:file-as="Calvert, Charlie" opf:role="aut">Charlie Calvert</dc:creator>
+<dc:publisher>elvenware.com</dc:publisher>
+<dc:date opf:event="publication">2017-07-03</dc:date>
+<dc:rights>Copyright © 2017 Charlie Calvert</dc:rights>

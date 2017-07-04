@@ -1,0 +1,17 @@
+{
+  "name": "create-scripts",
+  "version": "1.0.0",
+  "description": "Create scripts for making books",
+  "scripts": {
+    "start": "node BuildCopyJs.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "book"
+  ],
+  "author": "Charlie Calvert",
+  "license": "MIT",
+  "dependencies": {
+    "elven-code": "^3.0.1"
+  }
+}

@@ -1,0 +1,4 @@
+#! /bin/bash
+
+./copy-js
+make epub_js
