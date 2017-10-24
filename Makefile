@@ -2,8 +2,17 @@ CHAPTERS = $(sort $(wildcard chapters/*.md))
 
 # echo $(CHAPTERS)
 
+# ERRORS AND GOTCHAs
+# ==========================
 # If you get: ! LaTeX Error: Command \textquotesingle unavailable in encoding T1.
 # Then try: sudo apt-get install texlive-latex-extra
+# ==========================
+# Some Unicode characters would not render until I
+# included this in the command to create a PDF:
+#  --latex-engine=xelatex
+# And also installed this:
+#  sudo apt-get install texlive-xetex
+# ==========================
 
 BOOKNAME=MobileApplications
 BOOK_PROG272_NAME=ElvenMobileDevelopment
@@ -86,10 +95,11 @@ $(EPUB_JS_FILE): clean $(CHAPTERS)
 		--epub-metadata=meta/metadata-js-book.xml \
 		--table-of-contents
 
-$(PDF_FILE): $(CHAPTERS) meta/title.txt
-	pandoc \
+$(PDF_FILE): $(CHAPTERS)
+	pandoc --latex-engine=xelatex \
 		-o $(PDF_FILE) \
 		meta/title.txt \
+		meta/copyright.txt \
 		$(CHAPTERS) \
 		--toc
 

@@ -1,4 +1,7 @@
 #! /bin/bash
 
+rm images
+ln -s /media/charlie/seagate-backup-plus/Pictures/Books/GitBook/ images
+
 ./copy-git
 make epub_git

@@ -1,4 +1,7 @@
 #! /bin/bash
 
+rm images
+ln -s $HOME/Git/charliecalvert.github.io/development/web/JavaScript/images images
+
 ./copy-js
 make epub_js
